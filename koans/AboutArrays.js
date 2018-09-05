@@ -59,17 +59,17 @@ describe("About Arrays", function() {
     var array = [ "zero", "one", "two", "three", "four", "five" ];
 
     function passedByReference(refArray) {
-      refArray[1] = "changed in function";
+      refArray[1] = "one";
     }
     passedByReference(array);
-    expect(array[1]).toBe("changed in function");
+    expect(array[1]).toBe("one");
 
     var assignedArray = array;
-    assignedArray[5] = "changed in assignedArray";
-    expect(array[5]).toBe("changed in assignedArray");
+    assignedArray[5] = "five";
+    expect(array[5]).toBe("five");
 
     var copyOfArray = array.slice();
-    copyOfArray[3] = "changed in copyOfArray";
+    copyOfArray[3] = "three";
     expect(array[3]).toBe("three");
   });
 
